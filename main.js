@@ -5,13 +5,16 @@ function send(){
 	var task = document.getElementById("task").value;
 	var des = document.getElementById("des").value;
 	var id = window.localStorage.getItem("id");
-	if(task==""||des=="")
+	if(task==""||des==""){
+		window.alert("Please fill the empty blanks")
+	}
+	else {
 	window.localStorage.setItem("task"+ id, task);
 	window.localStorage.setItem("des"+ id, des);
 	compo(task,des,id);
 	id++;
 	window.localStorage.setItem("id",id);
-
+	}
 }
 function compo(task,des,id){
 	var div = document.createElement("div");
