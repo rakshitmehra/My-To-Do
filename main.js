@@ -14,6 +14,8 @@ function send(){
 	compo(task,des,id);
 	id++;
 	window.localStorage.setItem("id",id);
+	document.getElementById("task").value = "";
+	document.getElementById("des").value = "";
 	}
 }
 function compo(task,des,id){
@@ -28,4 +30,15 @@ function compo(task,des,id){
 	div.id = id;
 	div.append(h2,hr,p,button);
 	document.getElementById("components").appendChild(div);
+}
+function loaded() {
+	for(i=1; i<=100; i++) {
+		if(window.localStorage.getItem("task"+i)== undefined){
+			continue;
+		}
+		var task = window.localStorage.getItem("task"+i);
+		var des = window.localStorage.getItem("des"+i);
+		compo(task, des, i);
+	}
+		
 }

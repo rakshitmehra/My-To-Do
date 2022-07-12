@@ -13,16 +13,18 @@ div{
 	width: 400px;
 	border-radius: 15px;
 	background-color: #e78187;
-	box-shadow: 5px 8px 30px 5px rgba(1, 0, 0, 0.8);
+	box-shadow: 5px 8px 10px 3px rgba(1, 0, 0, 0.4);
 }
 h1 {
-	padding-top: 10px 10px;
+	position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 	text-align: center;
 	margin: auto;
 	margin-top: 20px;
-	width: 250px;
-	border-radius: 15px;
-	background-color: #e78187;
+	width: 130px;
+	border-radius: 10px;
+	background-color: hotpink;
 	color: purple;
 }
 label {
@@ -39,6 +41,9 @@ input, textarea{
 	width: 85%;
 	border: none;
 }
+input:focus, textarea:focus {
+	outline: none;
+}
 button {
 	padding: 10px 10px;
 	color: purple;
@@ -49,10 +54,11 @@ button {
 	border-radius: 10px;
 	border: none;
 }
-button:hover {
+button:hover, button:focus {
 	background-color: lightgrey;
 	transition: 0.3s;
 	cursor: pointer;
+	outline: none;
 }
 #components {
 	margin-bottom: 20px;
