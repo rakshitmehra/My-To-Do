@@ -20,6 +20,7 @@ function send(){
 }
 function compo(task,des,id){
 	var div = document.createElement("div");
+	div.id = id;
 	var h2 = document.createElement("h2");
 	var hr = document.createElement("hr");
 	var p = document.createElement("p");
@@ -27,7 +28,11 @@ function compo(task,des,id){
 	h2.innerHTML = task;
 	p.innerHTML = des;
 	button.innerHTML = "Completed";
-	div.id = id;
+	button.onclick = function(){
+		document.getElementById(id).style.display = "none";
+		window.localStorage.removeItem("task" + id);
+		window.localStorage.removeItem("des" + id);
+	}
 	div.append(h2,hr,p,button);
 	document.getElementById("components").appendChild(div);
 }
